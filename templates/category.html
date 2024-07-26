@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ category.capitalize() }}{% endblock %}
+
+{% block content %}
+<h1>{{ category.capitalize() }} News</h1>
+<div class="category-news">
+    {% for article in articles %}
+    <article>
+        <h2><a href="{{ url_for('article', id=article.id) }}">{{ article.title }}</a></h2>
+    </article>
+    {% endfor %}
+</div>
+{% endblock %}
+
